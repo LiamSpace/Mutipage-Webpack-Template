@@ -2,10 +2,8 @@
  *  liam
  */
 const path = require('path');
-const webpack = require("webpack");
 const merge = require("webpack-merge");
 const cleanWebpackPlugin = require("clean-webpack-plugin");
-
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
@@ -13,21 +11,20 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 const webpackConfigBase = require('./webpack.base.conf');
 
 
-const webpackConfigProd = {
-    mode: 'production', // 通过 mode 声明生产环境
+module.exports = merge(webpackConfigBase,{
+    mode: 'production',                     // 通过 mode 声明生产环境
     output: {
         path: path.resolve(__dirname, '../dist'),
-        // 打包多出口文件
         filename: './js/[name].[hash:8].js',
         publicPath: './'
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-eval-source-map', //不生成映射文件，定位出错的行
     plugins: [
         //删除dist目录
         new cleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../'), //根目录
             // verbose Write logs to console.
-            verbose: true, //开启在控制台输出信息
+            verbose: true,                    //开启在控制台输出信息
             // dry Use boolean "true" to test/emulate delete. (will not remove files).
             // Default: false - remove files
             dry: false,
@@ -55,6 +52,4 @@ const webpackConfigProd = {
     module: {
         rules: []
     },
-}
-
-module.exports = merge(webpackConfigBase, webpackConfigProd);
+})
