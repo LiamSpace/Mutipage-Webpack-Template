@@ -1,28 +1,22 @@
-### Webpack多页面脚手架
+### Webpack 多页面脚手架
 
------
+---
 
 #### 使用场景：适用于企业官网、博客等多页面应用
 
-
-
-#### webpack版本：webpack4
-
-
+#### webpack 版本：webpack4
 
 ####实现功能：
 
-> * Eslint语法检查
-> * Ejs模版语法
-> * CSS预编译—Sass
-> * 静态资源目录（static【直接copy打包】、assets【图片、视频】）
-> * 热更新服务器
-> * 自带Jquery模块
-> * 支持es6语法
-> * npm包管理工具
-> * 兼容ie8以上、IOS7以上浏览器
-
-
+> - Eslint 语法检查
+> - Ejs 模版语法
+> - CSS 预编译—Sass
+> - 静态资源目录（static【直接 copy 打包】、assets【图片、视频】）
+> - 热更新服务器
+> - 自带 Jquery 模块
+> - 支持 es6 语法
+> - npm 包管理工具
+> - 兼容 ie8 以上、IOS7 以上浏览器
 
 #### 使用
 
@@ -41,11 +35,9 @@ $ npm run build #打包项目
 
 ```
 
-
-
 #### 目录结构：
 
-```bash
+````bash
 ​```
 .
 ├── README.md
@@ -89,13 +81,11 @@ $ npm run build #打包项目
 │       └── test.js
 └──
 ​```
-```
+````
 
 ```bash
 * 项目在npm install时，会出现报错，并不会影响项目正常运行。原因是: 查看自己的node版本是否过新，新的node版本会报错。
 ```
 
-
 作者 [@LiamSpace][3]
-2020 年 04月 17日
-
+2020 年 04 月 17 日
